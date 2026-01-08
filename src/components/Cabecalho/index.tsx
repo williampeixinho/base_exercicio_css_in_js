@@ -1,8 +1,9 @@
-import { HeaderBar, Title } from './styles'
+import { HeaderBar } from './styles'
+import { Container } from '../../styles'
 
 const Cabecalho = () => (
   <HeaderBar>
-    <Title>EBAC Jobs</Title>
+    <Container>EBAC Jobs</Container>
   </HeaderBar>
 )
 

@@ -1,25 +1,22 @@
 import styled from 'styled-components'
+import { Container as BaseContainer } from '../../styles'
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 26px 16px 56px;
+export const Wrapper = styled(BaseContainer)``
+
+export const Empty = styled.p`
+  margin-top: 32px;
+  color: var(--cor-principal);
+  text-align: center;
 `
 
-export const Grid = styled.div`
-  width: 900px;
-  max-width: calc(100% - 32px);
-  margin-top: 16px;
+export const Grid = styled.ul`
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-`
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 16px;
+  margin-top: 32px;
 
-export const Empty = styled.div`
-  width: 900px;
-  max-width: calc(100% - 32px);
-  margin-top: 16px;
-  color: #8b4e5a;
-  font-size: 13px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `

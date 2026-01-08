@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
-import { Button, Card, Form, Input, Wrapper } from './styles'
+import { BtnPesquisar, Campo, Form } from './styles'
+import { Container } from '../../styles'
 
 type Props = {
   onPesquisar: (termo: string) => void
@@ -15,18 +16,16 @@ const FormVagas = ({ onPesquisar }: Props) => {
   }
 
   return (
-    <Wrapper>
-      <Card>
-        <Form onSubmit={submit}>
-          <Input
-            value={termo}
-            onChange={(e) => setTermo(e.target.value)}
-            placeholder="front-end, fullstack, node, design"
-          />
-          <Button type="submit">Pesquisar</Button>
-        </Form>
-      </Card>
-    </Wrapper>
+    <Container>
+      <Form onSubmit={submit}>
+        <Campo
+          value={termo}
+          onChange={(e) => setTermo(e.target.value)}
+          placeholder="front-end, fullstack, node, design"
+        />
+        <BtnPesquisar type="submit">Pesquisar</BtnPesquisar>
+      </Form>
+    </Container>
   )
 }
 
