@@ -1,31 +1,35 @@
-import styles from './Vaga.module.css'
+import { Badge, Button, Card, Description, Footer, Header, Meta, Small, Title } from './styles'
 
 type Props = {
   titulo: string
-  localizacao: string
+  descricao: string
   nivel: string
-  modalidade: string
-  salarioMin: number
-  salarioMax: number
-  requisitos: string[]
+  localizacao?: string
+  link?: string
 }
 
-const Vaga = (props: Props) => (
-  <li className={styles.vaga}>
-    <h3 className={styles.vagaTitulo}>{props.titulo}</h3>
-    <ul>
-      <li>Localizacao: {props.localizacao}</li>
-      <li>Senioridade: {props.nivel}</li>
-      <li>Tipo de contratacao: {props.modalidade}</li>
-      <li>
-        Salário: {props.salarioMin} - {props.salarioMax}
-      </li>
-      <li>Requisitos: {props.requisitos.join(', ')}</li>
-    </ul>
-    <a className={styles.vagaLink} href="#">
-      Ver detalhes e candidatar-se
-    </a>
-  </li>
+const Vaga = ({ titulo, descricao, nivel, localizacao, link }: Props) => (
+  <Card>
+    <Header>
+      <Title>{titulo}</Title>
+      <Badge $tone="dark">{nivel}</Badge>
+    </Header>
+
+    <Meta>
+      {localizacao && <Badge>{localizacao}</Badge>}
+    </Meta>
+
+    <Description>{descricao}</Description>
+
+    <Footer>
+      <Small>Atualizada recentemente</Small>
+      {link && (
+        <Button href={link} target="_blank" rel="noreferrer">
+          Ver vaga
+        </Button>
+      )}
+    </Footer>
+  </Card>
 )
 
 export default Vaga
