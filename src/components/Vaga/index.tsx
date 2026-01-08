@@ -1,34 +1,38 @@
-import { Badge, Button, Card, Description, Footer, Header, Meta, Small, Title } from './styles'
+import { Button, Card, Line, Title } from './styles'
 
 type Props = {
   titulo: string
-  descricao: string
-  nivel: string
-  localizacao?: string
-  link?: string
+  localizacao: string
+  senioridade: string
+  tipo: string
+  salarioMin: number
+  salarioMax: number
+  requisitos: string
+  link: string
 }
 
-const Vaga = ({ titulo, descricao, nivel, localizacao, link }: Props) => (
+const Vaga = ({
+  titulo,
+  localizacao,
+  senioridade,
+  tipo,
+  salarioMin,
+  salarioMax,
+  requisitos,
+  link
+}: Props) => (
   <Card>
-    <Header>
-      <Title>{titulo}</Title>
-      <Badge $tone="dark">{nivel}</Badge>
-    </Header>
-
-    <Meta>
-      {localizacao && <Badge>{localizacao}</Badge>}
-    </Meta>
-
-    <Description>{descricao}</Description>
-
-    <Footer>
-      <Small>Atualizada recentemente</Small>
-      {link && (
-        <Button href={link} target="_blank" rel="noreferrer">
-          Ver vaga
-        </Button>
-      )}
-    </Footer>
+    <Title>{titulo}</Title>
+    <Line>Localização: {localizacao}</Line>
+    <Line>Senioridade: {senioridade}</Line>
+    <Line>Tipo de contratação: {tipo}</Line>
+    <Line>
+      Salário: {salarioMin} - {salarioMax}
+    </Line>
+    <Line>Requisitos: {requisitos}</Line>
+    <Button href={link} target="_blank" rel="noreferrer">
+      Ver detalhes e candidatar-se
+    </Button>
   </Card>
 )
 

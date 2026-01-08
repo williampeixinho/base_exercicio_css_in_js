@@ -9,9 +9,7 @@ function App() {
       <GlobalStyle />
       <Header />
       <Hero />
-      <div className="container">
-        <ListaVagas />
-      </div>
+      <ListaVagas />
     </>
   )
 }

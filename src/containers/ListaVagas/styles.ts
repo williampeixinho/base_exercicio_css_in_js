@@ -1,25 +1,25 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.section`
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 16px;
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 26px 16px 56px;
 `
 
 export const Grid = styled.div`
+  width: 900px;
+  max-width: calc(100% - 32px);
+  margin-top: 16px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: 1fr;
+  gap: 14px;
 `
 
 export const Empty = styled.div`
-  padding: 18px;
-  background: rgba(0,0,0,0.04);
-  border: 1px dashed rgba(0,0,0,0.18);
-  border-radius: 14px;
-  color: #222;
+  width: 900px;
+  max-width: calc(100% - 32px);
+  margin-top: 16px;
+  color: #8b4e5a;
+  font-size: 13px;
 `
